@@ -1,0 +1,57 @@
+{
+  "formatVersion": 1,
+  "database": {
+    "version": 1,
+    "identityHash": "538f95b27bf13140b89ec5c32bb462e9",
+    "entities": [
+      {
+        "tableName": "CalendarDay",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`slNo` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `date` TEXT, `videoId` TEXT, `note` TEXT, `saved` INTEGER)",
+        "fields": [
+          {
+            "fieldPath": "slNo",
+            "columnName": "slNo",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "date",
+            "columnName": "date",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "videoId",
+            "columnName": "videoId",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "note",
+            "columnName": "note",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "saved",
+            "columnName": "saved",
+            "affinity": "INTEGER",
+            "notNull": false
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "slNo"
+          ],
+          "autoGenerate": true
+        },
+        "indices": [],
+        "foreignKeys": []
+      }
+    ],
+    "setupQueries": [
+      "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, \"538f95b27bf13140b89ec5c32bb462e9\")"
+    ]
+  }
+}

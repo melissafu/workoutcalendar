@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="io.github.melissafmt.finalproject.MainActivity"
+    tools:layout_editor_absoluteX="0dp"
+    tools:layout_editor_absoluteY="81dp">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0">
+
+        <EditText
+            android:id="@+id/editText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/noteSection"
+            android:layout_alignLeft="@+id/noteSection"
+            android:layout_alignStart="@+id/noteSection"
+            android:ems="10"
+            android:hint="Notes"
+            android:inputType="textMultiLine"
+            tools:layout_editor_absoluteX="15dp"
+            tools:layout_editor_absoluteY="346dp" />
+
+        <CheckBox
+            android:id="@+id/checkBox2"
+            android:layout_width="38dp"
+            android:layout_height="39dp"
+            android:layout_alignTop="@+id/date"
+            android:layout_toLeftOf="@+id/date"
+            android:layout_toStartOf="@+id/date"
+            tools:layout_editor_absoluteX="16dp"
+            tools:layout_editor_absoluteY="16dp"
+            android:onClick="onSaveCheckBoxClicked"/>
+
+        <fragment
+            android:id="@+id/youtubeplayerfragment"
+            android:name="com.google.android.youtube.player.YouTubePlayerFragment"
+            android:layout_width="match_parent"
+            android:layout_height="186dp"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_below="@+id/checkBox2"
+            android:layout_marginTop="58dp"
+            tools:layout_editor_absoluteY="107dp" />
+
+        <Button
+            android:id="@+id/add"
+            android:layout_width="match_parent"
+            android:layout_height="43dp"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:onClick="searchFunction"
+            android:text="+"
+            tools:layout_constraintBottom_creator="1"
+            tools:layout_constraintLeft_creator="1"
+            tools:layout_constraintRight_creator="1"
+            tools:layout_editor_absoluteX="164dp"
+            tools:layout_editor_absoluteY="452dp" />
+
+        <Button
+            android:id="@+id/btngocalendar"
+            android:layout_width="61dp"
+            android:layout_height="38dp"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginEnd="18dp"
+            android:layout_marginRight="18dp"
+            android:layout_marginTop="18dp"
+            android:background="@drawable/calendar"
+            android:textAlignment="center"
+            tools:layout_constraintLeft_creator="1"
+            tools:layout_constraintRight_creator="1"
+            tools:layout_constraintTop_creator="1"
+            tools:layout_editor_absoluteX="292dp"
+            tools:layout_editor_absoluteY="16dp" />
+
+        <TextView
+            android:id="@+id/date"
+            android:layout_width="241dp"
+            android:layout_height="34dp"
+            android:layout_alignBottom="@+id/btngocalendar"
+            android:layout_toLeftOf="@+id/btngocalendar"
+            android:layout_toStartOf="@+id/btngocalendar"
+            android:fontFamily="Arial"
+            android:text="Date"
+            android:textAlignment="center"
+            android:textColor="#99badd"
+            android:textSize="28dp"
+            android:textStyle="bold"
+            android:visibility="visible"
+            tools:layout_constraintBottom_creator="1"
+            tools:layout_constraintLeft_creator="1"
+            tools:layout_constraintTop_creator="1"
+            tools:layout_editor_absoluteX="46dp"
+            tools:layout_editor_absoluteY="20dp" />
+
+        <Button
+            android:id="@+id/noteSection"
+            android:layout_width="match_parent"
+            android:layout_height="43dp"
+            android:layout_above="@+id/add"
+            android:background="#FF69B4"
+            android:text="Save Notes"
+            android:onClick="saveNotesFunction"
+            />
+    </RelativeLayout>
+
+</android.support.constraint.ConstraintLayout>
